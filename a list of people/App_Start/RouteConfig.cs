@@ -14,9 +14,9 @@ namespace a_list_of_people
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "Default",
+                name: "People",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "People", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

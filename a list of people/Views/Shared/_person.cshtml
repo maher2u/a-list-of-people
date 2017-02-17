@@ -1,0 +1,25 @@
+﻿@model a_list_of_people.Models.People
+
+<tr>
+    <td>
+        @Html.DisplayFor(m => m.ID)
+    </td>
+    <td>
+        @Html.DisplayFor(m => m.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(m => m.Age)
+    </td>
+
+    <td>
+        @Html.DisplayFor(m => m.Country)
+    </td>
+    <td>
+        @Html.DisplayFor(m => m.phonenumbers)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+        @Html.ActionLink("Details", "Details", new { id = Model.ID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = Model.ID })
+    </td>
+</tr>

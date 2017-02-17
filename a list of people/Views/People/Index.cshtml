@@ -1,0 +1,50 @@
+﻿@model IEnumerable<a_list_of_people.Models.People>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 style="color:red">A List Of People </h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div>
+   
+    @using (Html.BeginForm())
+    {
+        @Html.TextBox("searchTerm")
+        <input type="submit" value="Search By Name" />
+    }
+        
+      
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            Person ID's
+        </th>
+        <th>
+            Person Name's
+        </th>
+        <th>
+            Person Age's
+        </th>
+
+        <th>
+            Person Country's
+        </th>
+        <th>
+            Person Phone's
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    @Html.Partial("_person",item)
+}
+
+</table>
+
+@Html.Action("OldestAge", "People")
